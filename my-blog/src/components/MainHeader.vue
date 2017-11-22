@@ -1,8 +1,8 @@
 <template>
-    <div class="header">
+    <div class="header" v-if="isVisible">
         <div class="img-div">
             <img src="../assets/logo.png">
-            <span>{{ msg }}</span>
+            <div>{{ msg }}</div>
         </div>
         <div class="menu-div">
             <ul>
@@ -19,7 +19,8 @@ export default {
   name: 'Test',
   data () {
     return {
-      msg: '#Dev #Web #MES 조회화면 만들기'
+      msg: '#Web#Dev#초-미니 개발자 #MES 조회화면 만들기',
+      isVisible: false
     }
   }
 }
@@ -28,9 +29,11 @@ export default {
 <style scoped>
 .header {
   float: left;
-  width: 100%;
+  width: 80%;
   height: 70px;
   border-bottom: 1px solid #ced4da;
+  background-color: #fff;
+  position: fixed;
 }
 .img-div {
   width: 60%;
@@ -45,11 +48,11 @@ export default {
 img {
   float: left;
   height: 50%;
-  margin: 10px 0 0 10px;
+  margin: 0 0 0 10px;
 }
-.img-div span {
+.img-div div {  
+  clear: both;
     float: left;
-    line-height: 70px;
 }
 ul {
   width: 100%;
@@ -63,6 +66,6 @@ ul {
   float: left;
   line-height: 70px;
   text-align: center;
-  padding: 0 10% 0 10%;
+  padding: 0 8% 0 8%;
 }
 </style>
