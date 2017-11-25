@@ -1,9 +1,12 @@
 <template>
     <div id="home-container">
-        <main-header></main-header>
+        <main-header
+            class="main-header" 
+            :is-visible="scrolled" 
+            :scroll="scrollHandle" />
         <div class="home-content">
             <div>
-                캔버스로 그림그리고 싶다
+                오늘도 열심히 하자
             </div>
         </div>
     </div>
@@ -15,14 +18,31 @@ export default {
   name: 'Home',
   components: {
     'main-header': MainHeader
+  },
+  data () {
+    return {
+      scrolled: false
+    }
+  },
+  methods: {
+    scrollHandle: function () {
+      this.scrolled = window.scrollY > 0
+    }
+  },
+  created () {
+    window.addEventListener('scroll', this.scrollHandle)
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.scrollHandle)
   }
 }
 </script>
 
-<style>
-#home-container{
-    width: 100%;
-    min-height: 1024px;
+<style lang="css" scoped>
+
+#home-container {
+  width: 100%;
+  min-height: 1024px;
 }
 .home-content {
   clear: both;
@@ -30,6 +50,10 @@ export default {
   width: 100%;
   margin-top: 10px;
   font-size: 1.3em;
+}
+
+.home-content {
+    margin: 0 auto;
 }
 </style>
 

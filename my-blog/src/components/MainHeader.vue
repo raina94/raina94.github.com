@@ -8,7 +8,7 @@
             <ul>
                 <li>나는 누구 /</li>
                 <li>해본 것 /</li>
-                <li>공부한 것 /</li>
+                <li><router-link to="/study">공부한 것 /</router-link></li>
             </ul>
         </div>
     </div>
@@ -16,11 +16,16 @@
 
 <script>
 export default {
-  name: 'Test',
+  name: 'MainHeader',
+  props: {
+    isVisible: {
+      type: Boolean,
+      default: false
+    }
+  },
   data () {
     return {
-      msg: '#Web#Dev#초-미니 개발자 #MES 조회화면 만들기',
-      isVisible: false
+      msg: '#Web#Dev#초-미니 개발자 #MES 조회화면 만들기'
     }
   }
 }
@@ -34,6 +39,8 @@ export default {
   border-bottom: 1px solid #ced4da;
   background-color: #fff;
   position: fixed;
+  margin: 0;
+  top: 0;
 }
 .img-div {
   width: 60%;

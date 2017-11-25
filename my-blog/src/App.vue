@@ -20,7 +20,7 @@ export default {
   font-style: normal;
   text-align: center;
   color: #2c3e50;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 </style>
