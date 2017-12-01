@@ -8,7 +8,7 @@
             <ul>
                 <li>나는 누구 /</li>
                 <li>해본 것 /</li>
-                <li><router-link to="/study">공부한 것 /</router-link></li>
+                <li><router-link :to="{name: 'Study'}">공부한 것 /</router-link></li>
             </ul>
         </div>
     </div>
